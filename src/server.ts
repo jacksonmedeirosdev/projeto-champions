@@ -1,15 +1,13 @@
-import express,  {Request, Response} from"express";
+import express, { json, Request, Response } from "express";
+import createApp from "./app";
 
 const port = process.env.PORT || 3000;
 
-const app = express();
+const app = createApp();
 
-app.get("/", (request: Request, response: Response) => {
-    response.send("Criando API com EXPRESS!");
-});
 
 
 
 app.listen(port, () => {
-    console.log("Server is running on port " + port + "...");
+    console.log(`Server running in http://localhost:${port}`);
 });
